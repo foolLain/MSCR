@@ -1,0 +1,31 @@
+model: ms_resnet20
+device: 0
+# T_c_config: [10,10,16]
+T: 10
+# resume: /home/ys/quick_slow_SNN/quick_slow/output/train/20240827-161909-ms_resnet34_qs-32/model_best.pth.tar
+# no_resume_opt: True
+# lr: 1e-5
+# min_lr: 1e-6
+# epochs: 240
+lr: 1e-3
+min_lr: 1e-5
+batch_size: 16
+val_batch_size: 16
+weight_decay: 0
+epochs: 96
+data_path: /home/ys/data/cifar10_dvs/
+dataset: cifar10dvs
+amp: False
+sched: cosine
+cooldown_epochs: 10
+warmup_epochs: 10
+warmup_lr: 1e-5
+opt: adamw
+workers: 8
+mixup: 0.5
+cutmix: 0.0
+mixup_prob: 0.5
+mixup_switch_prob: 0.5
+mixup_mode: 'batch'
+smoothing: 0.1
+num_classes: 10
